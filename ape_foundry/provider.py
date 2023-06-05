@@ -277,7 +277,7 @@ class FoundryProvider(SubprocessProvider, Web3Provider, TestProviderAPI):
             "--port",
             f"{self.port}",
             "--mnemonic",
-            self.mnemonic,
+            '"' + self.mnemonic + '"', # wrap mnemonic in quotes
             "--accounts",
             f"{self.number_of_accounts}",
             "--derivation-path",
